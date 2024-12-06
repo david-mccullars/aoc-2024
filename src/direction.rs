@@ -39,6 +39,10 @@ impl Direction {
         self.forward_n_from(pos, 1)
     }
 
+    pub fn backward_from(&self, pos: &Pos) -> Pos {
+        self.forward_n_from(pos, -1)
+    }
+
     pub fn forward_n_from(&self, pos: &Pos, n: isize) -> Pos {
         match self {
             Direction::North => (pos.0, pos.1 - n),
