@@ -1,4 +1,5 @@
 use num::{cast, NumCast};
+use std::collections::VecDeque;
 use std::hash::Hash;
 use std::ops;
 
@@ -93,5 +94,22 @@ impl ops::Sub<&Pos> for Direction {
 
     fn sub(self, pos: &Pos) -> Self::Output {
         self.invert().forward_from(pos)
+    }
+}
+
+pub fn flood_fill<F, G>(start: &Pos, mut on_each: F, mut is_successor: G)
+where
+    F: FnMut(&Pos),
+    G: FnMut(&Pos, &Pos, &Direction) -> bool,
+{
+    let mut queue = VecDeque::from([*start]);
+    while let Some(pos) = queue.pop_front() {
+        on_each(&pos);
+        for dir in DIRECTIONS {
+            let pos2 = dir.forward_from(&pos);
+            if is_successor(&pos, &pos2, &dir) {
+                queue.push_back(pos2);
+            }
+        }
     }
 }
