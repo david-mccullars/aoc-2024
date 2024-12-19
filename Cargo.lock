@@ -54,6 +54,7 @@ dependencies = [
  "pico-args",
  "rayon",
  "regex",
+ "rust-fsm",
  "rustworkx-core",
  "tinyjson",
  "topological-sort",
@@ -1063,6 +1064,26 @@ name = "regex-syntax"
 version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c08c74e62047bb2de4ff487b251e4a92e24f48745648451635cec7d591162d9f"
+
+[[package]]
+name = "rust-fsm"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cebef9e69ecb76b3cebbbe9c789f41f4be3402a33dca983c24493f45c92351c9"
+dependencies = [
+ "rust-fsm-dsl",
+]
+
+[[package]]
+name = "rust-fsm-dsl"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b3adcbccd7feb6960e55a40d116a82ef40281248d630cfa3530586a49efbbd05"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.39",
+]
 
 [[package]]
 name = "rustc-demangle"
