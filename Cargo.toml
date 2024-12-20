@@ -27,6 +27,7 @@ array_tool = "1.0.3"
 
 # Template dependencies
 chrono = { version = "0.4.31", optional = true }
+derivative = "2.2.0"
 dhat = { version = "0.3.2", optional = true }
 fancy-regex = "0.13.0"
 hashbrown = "0.14.3"
