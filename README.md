@@ -15,6 +15,7 @@
 | [Day 10](./src/bin/10.rs) | `76.6µs` | `76.5µs` |
 | [Day 11](./src/bin/11.rs) | `4.3µs` | `1.9µs` |
 | [Day 12](./src/bin/12.rs) | `3.0ms` | `4.2ms` |
+| [Day 13](./src/bin/13.rs) | `178.6µs` | `131.4µs` |
 
-**Total: 85.35ms**
+**Total: 85.66ms**
 <!--- benchmarking table --->
